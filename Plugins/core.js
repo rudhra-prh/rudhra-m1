@@ -96,9 +96,9 @@ module.exports = {
               file.replace(".js", "").slice(1);
 
             formatted += `├┌──❮ *${capitalizedFile}* ❯\n││ \n`;
-            formatted += `\`\`\`${commands
+            formatted += `${commands
               .map((cmd) => `││◦ ${prefix + cmd}`)
-              .join("\n")}\`\`\`\n│└───────────⭓\n`;
+              .join("\n")}\n│└───────────⭓\n`;
           }
 
           return formatted.trim();
@@ -120,7 +120,7 @@ module.exports = {
 ││       █║▌║▌║║▌║ █
 ││       © 𝙿𝚁𝙸𝙽𝙲𝙴 𝚁𝚄𝙳𝙷
 │└───────────────◉
-│    ≡ *ALL MENU LIST*\n${formattedCommands}\n└─────────────◉\n\n*© ᴛᴇᴀᴍ ʀᴜᴅʜʀᴀッ*`;
+│    ⦙☰ *ALL MENU LIST*\n${formattedCommands}\n└─────────────◉\n\n*© ᴛᴇᴀᴍ ʀᴜᴅʜʀᴀッ*`;
         await Atlas.sendMessage(
           m.from,
           { image: { url: botImage1 }, caption: helpText },
