@@ -21,7 +21,7 @@ module.exports = {
   uniquecommands: ["script", "support", "help", "system", "about"],
   description: "All system commands",
   start: async (
-    Atlas,
+    Rudhra,
     m,
     { pushName, prefix, inputCMD, doReact, text, args }
   ) => {
@@ -45,7 +45,7 @@ module.exports = {
         )} MB\n*📅 Last Updated:* ${repo.updated_at}\n\n*🔗 Repo Link:* ${
           repo.html_url
         }\n`;
-        Atlas.sendMessage(m.from, { image: pic, caption: txt }, { quoted: m });
+        Rudhra.sendMessage(m.from, { image: pic, caption: txt }, { quoted: m });
         break;
 
       case "support":
@@ -54,14 +54,14 @@ module.exports = {
         m.reply(`ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴅᴍ.  *${pushName}* \n\nɪ ʜᴀᴠᴇ ꜱᴇɴᴛ ʏᴏᴜ ꜱᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ ʟɪɴᴋ ᴘᴇʀꜱᴏɴᴀʟʟʏ.`)
         let botpic = botImage1
         let txt2 = `            ⦿ *ʀᴜᴅʜʀᴀ ɢʀᴏᴜᴘ ʟɪɴᴋ* ⦿\n\n*Link:* ${suppL}\n\n*ɴᴏᴛᴇ:* ᴘʟᴇᴀꜱᴇ ᴅᴏɴ'ᴛ ꜱᴘᴀᴍ ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ, ᴀɴᴅ ᴅᴏɴ'ᴛ ᴍᴇꜱꜱᴀɢᴇ *ᴀᴅᴍɪɴꜱ ᴅɪʀᴇᴄᴛʟʏ* ᴡɪᴛʜᴏᴜᴛ ᴘᴇʀᴍɪꜱꜱɪᴏɴ. ᴀꜱᴋ ꜰᴏʀ ʜᴇʟᴘ ɪɴ *ɢʀᴏᴜᴘ*.\n\nᴛʜᴀɴᴋꜱ ꜰᴏʀ ᴜꜱɪɴɢ ʀᴜᴅʜʀᴀ`;
-        await Atlas.sendMessage(m.sender,{ image:{url:botpic}, caption: txt2 }, { quoted: m });
+        await Rudhra.sendMessage(m.sender,{ image:{url:botpic}, caption: txt2 }, { quoted: m });
         break;
 
       case "help":
       case "h":
       case "menu":
         await doReact("☃️");
-        await Atlas.sendPresenceUpdate("composing", m.from);
+        await Rudhra.sendPresenceUpdate("composing", m.from);
         function readUniqueCommands(dirPath) {
           const allCommands = [];
 
@@ -123,7 +123,7 @@ module.exports = {
 ├────────────────•
 │    *⦙☰  ALL MENU LIST*
 ├────────────────•\n${formattedCommands}\n└────────────────◉\n\n*© ᴛᴇᴀᴍ ʀᴜᴅʜʀᴀッ*`;
-        await Atlas.sendMessage(
+        await Rudhra.sendMessage(
           m.from,
           { image: { url: botImage1 }, caption: helpText },
           { quoted: m }
@@ -176,7 +176,7 @@ module.exports = {
         if (latest.includes(version2) || version2.includes(latest)) {
           txt4 += `\n\n*⚠️ Bot Update Available:*`;
         } else txt4 += `\n\n*🔰 Bot is up to date.*`;
-        Atlas.sendMessage(m.from, { image: pic, caption: txt4 }, { quoted: m });
+        Rudhra.sendMessage(m.from, { image: pic, caption: txt4 }, { quoted: m });
 
         break;
 
