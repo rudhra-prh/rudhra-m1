@@ -29,29 +29,32 @@ module.exports = {
     switch (inputCMD) {
       case "script":
       case "sc":
-        await doReact("🧣");
+      case "git":
+        await doReact("🗒️");
         let repoInfo = await axios.get(
           "https://api.github.com/repos/princerudh/rudhra-md"
         );
         let repo = repoInfo.data;
         console.log(repo);
-        let txt = `            🧣 *${botName}'s Script* 🧣\n\n*🎀 Total Forks:* ${
+        let txt = `              *${botName}'ꜱ ꜱᴄʀɪᴘᴛ*  \n\n*⿻ Total Forks:* ${
           repo.forks_count
-        }\n*⭐ Total Stars:* ${repo.stargazers_count}\n*📜 License:* ${
+        }\n*⿻ Total Stars:* ${repo.stargazers_count}\n*⿻ License:* ${
           repo.license.name
-        }\n*📁 Repo Size:* ${(repo.size / 1024).toFixed(
+        }\n*⿻ Repo Size:* ${(repo.size / 1024).toFixed(
           2
         )} MB\n*📅 Last Updated:* ${repo.updated_at}\n\n*🔗 Repo Link:* ${
           repo.html_url
-        }\n\n❝ Dont forget to give a Star ⭐ to the repo. It's made with restless hardwork by *Team RUDHRA*. ❞\n\n*©️ Team RUDHRA- 2023*`;
+        }\n`;
         Rudhra.sendMessage(m.from, { image: pic, caption: txt }, { quoted: m });
         break;
 
       case "support":
       case "supportgc":
-        await doReact("🔰");
-        let txt2 = `              🧣 *Support Group* 🧣\n\n*${botName}* is an open source project, and we are always happy to help you.\n\n*Link:* ${suppL}\n\n*Note:* Please don't spam in the group, and don't message *Admins directly* without permission. Ask for help inside *Group*.\n\n*Thanks for using Rudhra.*`;
-        Rudhra.sendMessage(m.from, { image: pic, caption: txt2 }, { quoted: m });
+        await doReact("📱");
+        m.reply(`ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴅᴍ.  *${pushName}* \n\nɪ ʜᴀᴠᴇ ꜱᴇɴᴛ ʏᴏᴜ ꜱᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ ʟɪɴᴋ ᴘᴇʀꜱᴏɴᴀʟʟʏ.`)
+        let botpic = botImage1
+        let txt2 = `            ⦿ *ʀᴜᴅʜʀᴀ ɢʀᴏᴜᴘ ʟɪɴᴋ* ⦿\n\n*Link:* ${suppL}\n\n*ɴᴏᴛᴇ:* ᴘʟᴇᴀꜱᴇ ᴅᴏɴ'ᴛ ꜱᴘᴀᴍ ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ, ᴀɴᴅ ᴅᴏɴ'ᴛ ᴍᴇꜱꜱᴀɢᴇ *ᴀᴅᴍɪɴꜱ ᴅɪʀᴇᴄᴛʟʏ* ᴡɪᴛʜᴏᴜᴛ ᴘᴇʀᴍɪꜱꜱɪᴏɴ. ᴀꜱᴋ ꜰᴏʀ ʜᴇʟᴘ ɪɴ *ɢʀᴏᴜᴘ*.\n\nᴛʜᴀɴᴋꜱ ꜰᴏʀ ᴜꜱɪɴɢ ʀᴜᴅʜʀᴀ`;
+        await Rudhra.sendMessage(m.sender,{ image:{url:botpic}, caption: txt2 }, { quoted: m });
         break;
 
       case "help":
@@ -92,10 +95,10 @@ module.exports = {
               file.replace(".js", "").charAt(0).toUpperCase() +
               file.replace(".js", "").slice(1);
 
-            formatted += `┌─⊷ *${capitalizedFile}* \n▢\n`;
+            formatted += `┌─⊷ *${capitalizedFile}* \n▢ \n`;
             formatted += `\`\`\`${commands
               .map((cmd) => `▢ ${prefix + cmd}`)
-              .join("\n")}\`\`\`\n└───────────⊷\n`;
+              .join("\n")}\`\`\`\n└───────────•\n`;
           }
 
           return formatted.trim();
@@ -105,10 +108,22 @@ module.exports = {
 
         const allCommands = readUniqueCommands(pluginsDir);
         const formattedCommands = formatCommands(allCommands);
-        var helpText = `\n*Hello 👋* *${pushName}* ,\n\nI am *${botName}*, a WhatsApp bot built to take your boring WhatsApp experience into next level.\n\n*🔖 My Prefix is:*  ${prefix}\n\n${formattedCommands}\n\n\n*©️ Team RUDHRA- 2023*`;
+        var helpText = `•──────────────────•
+  
+   *ʜᴇʏ* 😉 *${pushName}* ,
+  〄 *ʙᴏᴛɴᴀᴍᴇ* : ʀᴜᴅʜʀᴀ-ᴍᴅ
+  〄 *ᴠᴇʀѕɪᴏɴ*      : 𝟹.𝟶.𝟶
+  〄 *ʟᴀɴɢᴜᴀɢᴇ*  : ᴇɴɢʟɪѕʜ
+  〄 *ᴡᴏʀᴋ ᴛʏᴘᴇ* : 
+  〄 *ᴘʀᴇꜰɪx*         :   *${prefix}*
+ 
+            █║▌║▌║║▌║ █
+            © 𝙿𝚁𝙸𝙽𝙲𝙴 𝚁𝚄𝙳𝙷
+ 
+•──────────────────•\n\n${formattedCommands}\n\n\n*©️ Team RUDHRA - 2023*`;
         await Rudhra.sendMessage(
           m.from,
-          { video: { url: botVideo }, gifPlayback: true, caption: helpText },
+          { image: { url: botImage1 }, caption: helpText },
           { quoted: m }
         );
 
