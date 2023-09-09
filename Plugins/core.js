@@ -95,10 +95,10 @@ module.exports = {
               file.replace(".js", "").charAt(0).toUpperCase() +
               file.replace(".js", "").slice(1);
 
-            formatted += `├┌───❮ *${capitalizedFile}* ❯\n││ \n`;
+            formatted += `├┌──❮ *${capitalizedFile}* ❯\n││ \n`;
             formatted += `\`\`\`${commands
               .map((cmd) => `││◦ ${prefix + cmd}`)
-              .join("\n")}\`\`\`\n│└──────────•\n`;
+              .join("\n")}\`\`\`\n│└───────────⭓\n`;
           }
 
           return formatted.trim();
@@ -109,7 +109,7 @@ module.exports = {
         const allCommands = readUniqueCommands(pluginsDir);
         const formattedCommands = formatCommands(allCommands);
         var helpText = `┌───❮ *RUDHRA-MD* ❯──•
-│┌──────────────◉
+│┌───────────────◉
 ││ *Hello*👋 *${pushName}* ,
 ││ *ʙᴏᴛɴᴀᴍᴇ* : ʀᴜᴅʜʀᴀ-ᴍᴅ
 ││ *ᴠᴇʀѕɪᴏɴ*      : 𝟹.𝟶.𝟶
@@ -119,7 +119,7 @@ module.exports = {
 ││ 
 ││       █║▌║▌║║▌║ █
 ││       © 𝙿𝚁𝙸𝙽𝙲𝙴 𝚁𝚄𝙳𝙷
-│└──────────────◉\n\n${formattedCommands}└─────────────◉\n\n\n*©️ Team RUDHRA - 2023*`;
+│└───────────────◉\n├─≡ *ALL MENU LIST*\n${formattedCommands}\n└─────────────◉\n\n*© ᴛᴇᴀᴍ ʀᴜᴅʜʀᴀッ*`;
         await Atlas.sendMessage(
           m.from,
           { image: { url: botImage1 }, caption: helpText },
