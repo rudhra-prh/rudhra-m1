@@ -1,12 +1,12 @@
 global.charID0 = {
-    botName : "ʀᴜᴅʜʀᴀ ᴍᴅ",
+    botName : "ʀᴜᴅʜʀᴀ",
     botVideo : "https://graph.org/file/1c51c5f50af35004a7090.mp4",
-    botImage1 : "https://github.com/rudhra-prh/media/blob/main/image/rudhra2.jpg",
-    botImage2 : "https://github.com/rudhra-prh/media/blob/main/image/rudhra2.jpg",
-    botImage3 : "https://github.com/rudhra-prh/media/blob/main/image/rudhra2.jpg",
-    botImage4 : "https://github.com/rudhra-prh/media/blob/main/image/rudhra2.jpg",
-    botImage5 : "https://github.com/rudhra-prh/media/blob/main/image/rudhra1.jpg",
-    botImage6 : "https://github.com/rudhra-prh/media/blob/main/image/rudhra1.jpg",
+    botImage1 : "https://graph.org/file/7666caaef75dd66b8624d.jpg",
+    botImage2 : "https://graph.org/file/7666caaef75dd66b8624d.jpg",
+    botImage3 : "https://graph.org/file/7666caaef75dd66b8624d.jpg",
+    botImage4 : "https://graph.org/file/7666caaef75dd66b8624d.jpg",
+    botImage5 : "https://graph.org/file/7666caaef75dd66b8624d.jpg",
+    botImage6 : "https://graph.org/file/7666caaef75dd66b8624d.jpg",
 }
 
 global.charID1 = {
