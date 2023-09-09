@@ -21,7 +21,7 @@ module.exports = {
   uniquecommands: ["script", "support", "help", "system", "about"],
   description: "All system commands",
   start: async (
-    Rudhra,
+    Atlas,
     m,
     { pushName, prefix, inputCMD, doReact, text, args }
   ) => {
@@ -45,7 +45,7 @@ module.exports = {
         )} MB\n*📅 Last Updated:* ${repo.updated_at}\n\n*🔗 Repo Link:* ${
           repo.html_url
         }\n`;
-        Rudhra.sendMessage(m.from, { image: pic, caption: txt }, { quoted: m });
+        Atlas.sendMessage(m.from, { image: pic, caption: txt }, { quoted: m });
         break;
 
       case "support":
@@ -54,14 +54,14 @@ module.exports = {
         m.reply(`ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴅᴍ.  *${pushName}* \n\nɪ ʜᴀᴠᴇ ꜱᴇɴᴛ ʏᴏᴜ ꜱᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ ʟɪɴᴋ ᴘᴇʀꜱᴏɴᴀʟʟʏ.`)
         let botpic = botImage1
         let txt2 = `            ⦿ *ʀᴜᴅʜʀᴀ ɢʀᴏᴜᴘ ʟɪɴᴋ* ⦿\n\n*Link:* ${suppL}\n\n*ɴᴏᴛᴇ:* ᴘʟᴇᴀꜱᴇ ᴅᴏɴ'ᴛ ꜱᴘᴀᴍ ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ, ᴀɴᴅ ᴅᴏɴ'ᴛ ᴍᴇꜱꜱᴀɢᴇ *ᴀᴅᴍɪɴꜱ ᴅɪʀᴇᴄᴛʟʏ* ᴡɪᴛʜᴏᴜᴛ ᴘᴇʀᴍɪꜱꜱɪᴏɴ. ᴀꜱᴋ ꜰᴏʀ ʜᴇʟᴘ ɪɴ *ɢʀᴏᴜᴘ*.\n\nᴛʜᴀɴᴋꜱ ꜰᴏʀ ᴜꜱɪɴɢ ʀᴜᴅʜʀᴀ`;
-        await Rudhra.sendMessage(m.sender,{ image:{url:botpic}, caption: txt2 }, { quoted: m });
+        await Atlas.sendMessage(m.sender,{ image:{url:botpic}, caption: txt2 }, { quoted: m });
         break;
 
       case "help":
       case "h":
       case "menu":
         await doReact("☃️");
-        await Rudhra.sendPresenceUpdate("composing", m.from);
+        await Atlas.sendPresenceUpdate("composing", m.from);
         function readUniqueCommands(dirPath) {
           const allCommands = [];
 
@@ -95,10 +95,10 @@ module.exports = {
               file.replace(".js", "").charAt(0).toUpperCase() +
               file.replace(".js", "").slice(1);
 
-            formatted += `┌─⊷ *${capitalizedFile}* \n▢ \n`;
+            formatted += `├┌───❮ *${capitalizedFile}* ❯\n││ \n`;
             formatted += `\`\`\`${commands
-              .map((cmd) => `▢ ${prefix + cmd}`)
-              .join("\n")}\`\`\`\n└───────────•\n`;
+              .map((cmd) => `││◦ ${prefix + cmd}`)
+              .join("\n")}\`\`\`\n│└──────────•\n`;
           }
 
           return formatted.trim();
@@ -108,20 +108,19 @@ module.exports = {
 
         const allCommands = readUniqueCommands(pluginsDir);
         const formattedCommands = formatCommands(allCommands);
-        var helpText = `•──────────────────•
-  
-   *ʜᴇʏ* 😉 *${pushName}* ,
-  〄 *ʙᴏᴛɴᴀᴍᴇ* : ʀᴜᴅʜʀᴀ-ᴍᴅ
-  〄 *ᴠᴇʀѕɪᴏɴ*      : 𝟹.𝟶.𝟶
-  〄 *ʟᴀɴɢᴜᴀɢᴇ*  : ᴇɴɢʟɪѕʜ
-  〄 *ᴡᴏʀᴋ ᴛʏᴘᴇ* : 
-  〄 *ᴘʀᴇꜰɪx*         :   *${prefix}*
- 
-            █║▌║▌║║▌║ █
-            © 𝙿𝚁𝙸𝙽𝙲𝙴 𝚁𝚄𝙳𝙷
- 
-•──────────────────•\n\n${formattedCommands}\n\n\n*©️ Team RUDHRA - 2023*`;
-        await Rudhra.sendMessage(
+        var helpText = `┌───❮ *RUDHRA-MD* ❯──•
+│┌──────────────◉
+││ *Hello*👋 *${pushName}* ,
+││ *ʙᴏᴛɴᴀᴍᴇ* : ʀᴜᴅʜʀᴀ-ᴍᴅ
+││ *ᴠᴇʀѕɪᴏɴ*      : 𝟹.𝟶.𝟶
+││ *ʟᴀɴɢᴜᴀɢᴇ*  : ᴇɴɢʟɪѕʜ
+││ *ᴡᴏʀᴋ ᴛʏᴘᴇ* : 
+││ *ᴘʀᴇꜰɪx*         :   *${prefix}*
+││ 
+││       █║▌║▌║║▌║ █
+││       © 𝙿𝚁𝙸𝙽𝙲𝙴 𝚁𝚄𝙳𝙷
+│└──────────────◉\n\n${formattedCommands}└─────────────◉\n\n\n*©️ Team RUDHRA - 2023*`;
+        await Atlas.sendMessage(
           m.from,
           { image: { url: botImage1 }, caption: helpText },
           { quoted: m }
@@ -174,7 +173,7 @@ module.exports = {
         if (latest.includes(version2) || version2.includes(latest)) {
           txt4 += `\n\n*⚠️ Bot Update Available:*`;
         } else txt4 += `\n\n*🔰 Bot is up to date.*`;
-        Rudhra.sendMessage(m.from, { image: pic, caption: txt4 }, { quoted: m });
+        Atlas.sendMessage(m.from, { image: pic, caption: txt4 }, { quoted: m });
 
         break;
 
